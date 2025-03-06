@@ -30,5 +30,10 @@ def test_product_price_setter(capsys, product):
     message = capsys.readouterr()
     assert  message.out.strip() == "Цена не должна быть нулевая или отрицательная"
 
+def test_prod_category(product):
+    assert str(product) == "Sony, 125000.0 руб. Остаток: 5 шт."
+
+def test_prod_category_add(product, product2):
+    assert product.price * product.quantity + product2.price * product2.quantity == 1465000.0
 
 

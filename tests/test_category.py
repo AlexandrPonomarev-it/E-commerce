@@ -1,3 +1,6 @@
+import pytest
+
+
 def test_category_init(first_category, second_category):
     assert first_category.name == "Телевизор"
     assert first_category.description == "Красивый телевизор"
@@ -17,5 +20,19 @@ def test_category_prod_list_add(first_category, product):
     assert len(first_category.product_in_list) == 2
     first_category.add_product(product)
     assert len(first_category.product_in_list) == 3
+
+def test_cat_str(first_category):
+    assert str(first_category) == "Телевизор, количество продуктов: 8 шт."
+
+def test_prod_iterator(product_iterator):
+    iter(product_iterator)
+    assert product_iterator.index == 0
+    assert next(product_iterator).name == "PS5"
+    assert next(product_iterator).name == "XB"
+    assert next(product_iterator).name == "Dendy"
+
+    with pytest.raises(StopIteration):
+        next(product_iterator)
+
 
 
