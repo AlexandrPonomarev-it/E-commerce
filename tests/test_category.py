@@ -34,5 +34,11 @@ def test_prod_iterator(product_iterator):
     with pytest.raises(StopIteration):
         next(product_iterator)
 
+def test_category_add_product_setter_error(first_category):
+    with pytest.raises(TypeError):
+        first_category.add_product(1)
 
+def test_category_add_product_setter(first_category, product_smartphone_1):
+    first_category.add_product(product_smartphone_1)
+    assert first_category.product_in_list[-1].name == "Samsung Galaxy S23 Ultra"
 
