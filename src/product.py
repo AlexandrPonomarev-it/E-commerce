@@ -3,6 +3,7 @@ from src.print_mixin import PrintMixin
 
 
 class Product(BaseProduct, PrintMixin):
+    """ Класс для обработки информации о продуктах, представленных в магазине """
     name: str
     description: str
     price: float
