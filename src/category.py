@@ -1,7 +1,8 @@
+from src.base_order_cat import BaseOrderCat
 from src.product import Product
 
 
-class Category:
+class Category(BaseOrderCat):
     name: str
     description: str
     products: list
