@@ -3,6 +3,7 @@ from src.product import Product
 
 
 class Category(BaseOrderCat):
+    """ Класс для работы с данными по категориям продуктов представленных в магазине """
     name: str
     description: str
     products: list
