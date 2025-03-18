@@ -42,3 +42,17 @@ def test_category_add_product_setter(first_category, product_smartphone_1):
     first_category.add_product(product_smartphone_1)
     assert first_category.product_in_list[-1].name == "Samsung Galaxy S23 Ultra"
 
+def test_middle_price(first_category, category_without_product):
+    assert  first_category.middle_price() == 129000.0
+    assert category_without_product.middle_price() == 0
+
+def test_custom_exception(capsys, first_category, product):
+
+    first_category.add_product(product)
+    message = capsys.readouterr()
+    assert message.out.strip().split('\n')[-2] == "Товар успешно добавлен"
+    assert message.out.strip().split('\n')[-1] == "Обработка добавления товара завершена"
+
+
+
+
