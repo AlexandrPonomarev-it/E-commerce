@@ -2,7 +2,8 @@ from src.base_order_cat import BaseOrderCat
 
 
 class Order(BaseOrderCat):
-    """ Класс для обработки данных о конкретном заказе """
+    """Класс для обработки данных о конкретном заказе"""
+
     name: str
     quantity: int
     total_cost: float
